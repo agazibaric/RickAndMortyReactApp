@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 class Character extends Component {
   constructor(props) {
@@ -6,22 +8,18 @@ class Character extends Component {
   }
   render() {
     return (
-      <div className="card">
-        <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" className="card-link">
-            Card link
-          </a>
-          <a href="#" className="card-link">
-            Another link
-          </a>
-        </div>
-      </div>
+      <Card
+        className="shadow p-3 mx-1 my-1 bg-light rounded"
+        style={{
+          width: "15rem",
+        }}
+      >
+        <Card.Img variant="top" src={this.props.character.image} />
+        <Card.Body>
+          <Card.Title>{this.props.character.name}</Card.Title>
+          <Button variant="secondary">Show more</Button>
+        </Card.Body>
+      </Card>
     );
   }
 }

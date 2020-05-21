@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Character from "./Character";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 
 class Characters extends Component {
   constructor(props) {
@@ -39,11 +41,9 @@ class Characters extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="card-deck">{this.charactersList()}</div>
-        </div>
-      </div>
+      <Container>
+        <Row className="justify-content-md-center">{this.charactersList()}</Row>
+      </Container>
     );
   }
 }
