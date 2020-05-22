@@ -12,26 +12,12 @@ class Characters extends Component {
     this.state = {
       characters: [],
     };
+
+    this.mainLink = "https://rickandmortyapi.com/api/character/";
   }
 
   componentDidMount() {
-    this.getCharacters();
-  }
-
-  getCharacters() {
-    axios
-      .get("https://rickandmortyapi.com/api/character/")
-      .then((resp) => {
-        console.log("Get succsesfull");
-        console.log(resp);
-        this.setState({
-          characters: resp.data.results,
-        });
-      })
-      .catch((error) => {
-        console.log("ERROR while making a get request");
-        console.log(error);
-      });
+    this.filterCharacters();
   }
 
   charactersList() {
@@ -40,8 +26,20 @@ class Characters extends Component {
     });
   }
 
-  filterCharacters = (e) => {
-    console.log(e);
+  filterCharacters = (filter) => {
+    axios
+      .get(this.mainLink, {
+        params: filter,
+      })
+      .then((resp) => {
+        console.log(resp);
+        this.setState({
+          characters: resp.data.results,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   render() {
