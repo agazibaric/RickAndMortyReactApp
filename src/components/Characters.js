@@ -3,6 +3,7 @@ import axios from "axios";
 import Character from "./Character";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import SearchForm from "./SearchForm";
 
 class Characters extends Component {
   constructor(props) {
@@ -39,9 +40,14 @@ class Characters extends Component {
     });
   }
 
+  filterCharacters = (e) => {
+    console.log(e);
+  };
+
   render() {
     return (
       <Container>
+        <SearchForm filterCharacters={this.filterCharacters} />
         <Row className="justify-content-md-center">{this.charactersList()}</Row>
       </Container>
     );

@@ -10,6 +10,7 @@ class Character extends Component {
     return (
       <Card
         className="shadow p-3 mx-1 my-1 bg-light rounded"
+        border="secondary"
         style={{
           width: "15rem",
         }}

@@ -10,6 +10,7 @@ class Header extends Component {
             Explore all the interesting facts about the characters from the
             series
           </p>
+          <br />
         </div>
       </div>
     );
