@@ -31,9 +31,11 @@ class SearchForm extends Component {
   render() {
     return (
       <div className="mb-5 justify-content-md-center">
+        
         <div className="mb-3">
           <h4>Find your favorite character</h4>
         </div>
+
         <Form onSubmit={this.handleSearch}>
           <Form.Row>
             <Col>
@@ -95,6 +97,7 @@ class SearchForm extends Component {
             </Col>
           </Form.Row>
         </Form>
+        <hr />
       </div>
     );
   }
