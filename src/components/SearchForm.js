@@ -28,10 +28,17 @@ class SearchForm extends Component {
     this.props.filterCharacters(filter);
   };
 
+  clearFields = () => {
+    this.state.name.value = "";
+    this.state.status.value = "";
+    this.state.species.value = "";
+    this.state.type.value = "";
+    this.state.gender.value = "";
+  };
+
   render() {
     return (
       <div className="mb-5 justify-content-md-center">
-        
         <div className="mb-3">
           <h4>Find your favorite character</h4>
         </div>
@@ -49,6 +56,7 @@ class SearchForm extends Component {
             <Col>
               <Form.Control
                 as="select"
+                placeholder="Status"
                 ref={(ref) => {
                   this.state.status = ref;
                 }}
@@ -90,9 +98,13 @@ class SearchForm extends Component {
               </Form.Control>
             </Col>
             <Col>
-              <Form.Label></Form.Label>
               <Button variant="outline-secondary" type="submit">
                 Search
+              </Button>
+            </Col>
+            <Col>
+              <Button variant="outline-danger" onClick={this.clearFields}>
+                Clear
               </Button>
             </Col>
           </Form.Row>

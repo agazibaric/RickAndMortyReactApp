@@ -30,7 +30,7 @@ class Character extends Component {
               variant="secondary"
               onClick={() => this.setState({ addModalShow: true })}
             >
-              Show more
+              About
             </Button>
           </Card.Body>
         </Card>
